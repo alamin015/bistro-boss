@@ -19,6 +19,9 @@ const OurMenu = () => {
                 menu.map(item => <SingleMenu item={item} key={item._id} />)
             }
         </div>
+        <div className='text-center mt-10'>
+            <button className="myBtn">View Full Menu</button>
+        </div>
         </div>
     </div>
   )
