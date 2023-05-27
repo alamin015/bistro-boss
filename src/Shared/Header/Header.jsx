@@ -1,7 +1,6 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import {FaUserCircle} from "react-icons/fa";
-import logo from '../../assets/logo.png'
 
 const Header = () => {
 
@@ -24,7 +23,7 @@ const Header = () => {
   </>
   return (
     <>
-      <header className='bg-[#00000021] fixed top-0 left-0 z-50  w-full py-4'>
+      <header className='bg-white fixed top-0 left-0 z-50  w-full py-4'>
         <div className="container mx-auto">
           <div className="flex items-center justify-between">
             <div className='flex items-start flex-col'>

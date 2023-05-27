@@ -8,18 +8,18 @@ import img4 from '../../../assets/home/04.jpg';
 
 const Home = () => {
   return (
-    <div className='w-full'>
-      <Carousel centerMode={true}>
-                <div className='h-[90vh]'>
+    <div className='text-center mt-[100px]'>
+      <Carousel>
+                <div className='h-[80vh] w-full'>
                     <img className='w-full' src={img1} />
                 </div>
-                <div  className='h-[90vh]'>
+                <div  className='h-[80vh] w-full'>
                     <img src={img2} />
                 </div>
-                <div  className='h-[90vh]'>
+                <div  className='h-[80vh] w-full'>
                     <img src={img3} />
                 </div>
-                <div  className='h-[90vh]'>
+                <div  className='h-[80vh] w-full'>
                     <img src={img4} />
                 </div>
             </Carousel>
