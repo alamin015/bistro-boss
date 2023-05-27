@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import {FaUserCircle} from "react-icons/fa";
 
 const Header = () => {
-
+  const [cls,setCls] = useState(false);
+  window.addEventListener("scroll",() => {
+    if(scrollY > 100) {
+      setCls(true);
+    }else {
+      setCls(false);
+    }
+  })
+  console.log(cls)
   const navOptions = <>
           <li><NavLink className={`text-base font-inter ${({isActive}) => isActive ? "text-[#EEFF25]" : "text-white"} font-medium`} to="/">HOME</NavLink></li>
           <li><NavLink className='text-base font-inter font-medium' to="/contact">CONTACT US</NavLink></li>
@@ -23,7 +31,7 @@ const Header = () => {
   </>
   return (
     <>
-      <header className='bg-white fixed top-0 left-0 z-50  w-full py-4'>
+      <header className={`bg-white fixed ${cls && 'headerShadow'} top-0 left-0 z-50  w-full py-4`}>
         <div className="container mx-auto">
           <div className="flex items-center justify-between">
             <div className='flex items-start flex-col'>
