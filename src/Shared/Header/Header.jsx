@@ -11,7 +11,7 @@ const Header = () => {
       setCls(false);
     }
   })
-  console.log(cls)
+
   const navOptions = <>
           <li><NavLink className={`text-base font-inter ${({isActive}) => isActive ? "text-[#EEFF25]" : "text-white"} font-medium`} to="/">HOME</NavLink></li>
           <li><NavLink className='text-base font-inter font-medium' to="/contact">CONTACT US</NavLink></li>

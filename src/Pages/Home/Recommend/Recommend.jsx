@@ -12,7 +12,6 @@ const Recommend = () => {
       setItems(popularItems)
     })
   },[])
-  console.log(items)
   return (
     <div className='py-12'>
       <SectionTitle titleBottom="CHEF RECOMMENDS" titleTop="---Should Try---" />
