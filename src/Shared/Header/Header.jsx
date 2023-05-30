@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import {FaUserCircle} from "react-icons/fa";
+import { themeConText } from '../../MyAuthProvider/MyProver';
 
 const Header = () => {
   const [cls,setCls] = useState(false);
+  const {user} = useContext(themeConText)
   window.addEventListener("scroll",() => {
     if(scrollY > 100) {
       setCls(true);
@@ -26,7 +28,10 @@ const Header = () => {
         </div>
       </label>
       <div>
-      <FaUserCircle className='text-3xl' />
+        {
+          user.photoURL ? <img className='h-12 w-12 rounded-full object-cover' src={user.photoURL} alt="" /> : <FaUserCircle className='text-3xl' />
+        }
+      
       </div>
           
   </>

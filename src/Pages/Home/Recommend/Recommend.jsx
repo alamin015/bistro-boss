@@ -5,12 +5,9 @@ import SinglePopular from '../../../Components/SinglePopular/SinglePopular';
 const Recommend = () => {
   const [items,setItems] = useState([]);
   useEffect(() => {
-    fetch('menu.json')
+    fetch('http://localhost:5000/menu')
     .then(res => res.json())
-    .then(result => {
-      const popularItems = result.filter((data) => data.category === "popular")
-      setItems(popularItems)
-    })
+    .then(result => setItems(result))
   },[])
   return (
     <div className='py-12'>
