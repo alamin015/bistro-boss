@@ -1,15 +1,18 @@
 import React, { useContext } from 'react'
 import { themeConText } from './../../MyAuthProvider/MyProver';
+import useCart from '../../hooks/useCart';
 
 const SinglePopular = ({myData}) => {
   const {user} = useContext(themeConText)
     const {image, name, recipe} = myData;
-
+  const [,refetch] = useCart()
 
     const handleCart = () => {
-      if(user.email) {
+      if(user?.email) {
         myData.email = user?.email;
-        console.log(myData)
+        myData.my_id = myData._id;
+        delete myData._id;
+
         fetch('http://localhost:5000/cart',{
           method: "POST",
           headers: {
@@ -19,7 +22,8 @@ const SinglePopular = ({myData}) => {
         })
         .then(res => res.json())
         .then(data => {
-          console.log(data)
+          refetch();
+          // console.log(data)
         })
       }else {
         alert("please log in")

@@ -1,0 +1,18 @@
+.sidebar {
+    width: 300px;
+    background: #000;
+    height: 100vh;
+    color: #000;
+    padding: 20px;
+    position: relative;
+    transition: all 0.3s;
+}
+.sidebar.active {
+    width: 130px;
+    background: #000;
+    height: 100vh;
+    color: #000;
+    padding: 20px;
+    position: relative;
+    transition: all 0.3s;
+}
